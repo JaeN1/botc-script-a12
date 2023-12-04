@@ -1,0 +1,26 @@
+<!-- app.component.html -->
+<div class="app-container">
+  <div class="sidebar-container">
+    <app-menu></app-menu>
+    <app-personajes (personajeSeleccionado)="manejarSeleccion($event)"></app-personajes>
+  </div>
+
+  <div class="content-container">
+    <!-- Zona central para el papel A4 -->
+    <div class="header-container">
+      <span>SCRIPT NAME by {{ scriptName }}</span>
+      <span>Author: {{ author }}</span>
+      <button (click)="editarCabecera()">✏️</button>
+    </div>
+    
+    <div class="canvas-container">
+      <canvas #folioCanvas id="folioCanvas" width="595" height="842"></canvas>
+
+    </div>
+
+    <div class="floating-buttons">
+      <button (click)="descargarPDF()">Guardar como PDF</button>
+      <!-- Otros botones flotantes según sea necesario -->
+    </div>
+  </div>
+</div>

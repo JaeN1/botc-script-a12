@@ -1,0 +1,12 @@
+<!-- menu.component.html -->
+<div>
+    <h2>Sort by Character</h2>
+    <label><input type="radio" [(ngModel)]="selectedSort" value="None"> None</label>
+    <label><input type="radio" [(ngModel)]="selectedSort" value="Townsfolk"> Townsfolk</label>
+    <!-- Otros radio buttons -->
+  
+    <h2>Filter by Edition</h2>
+    <label *ngFor="let edition of editions">
+      <input type="checkbox" [(ngModel)]="selectedEditions" [value]="edition"> {{ edition }}
+    </label>
+  </div>

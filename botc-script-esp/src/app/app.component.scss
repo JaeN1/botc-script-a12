@@ -1,0 +1,75 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+  
+}
+
+.sidebar-container {
+  width: 30em;
+  background-color: #f0f0f0; /* Fondo gris claro para la barra lateral */
+  padding: 20px;
+  /* Otros estilos de la barra lateral según sea necesario */
+}
+
+
+.content-container {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff; /* Fondo blanco para el área central */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para resaltar el área central */
+  /* Otros estilos del área central según sea necesario */
+  background-image: url('/assets/bg-mandala.webp'); /* Ruta relativa al directorio de assets */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.canvas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.folio-container {
+  background-color: white; /* Color blanco para simular el papel A4 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para resaltar el papel */
+  /* Otros estilos del área del folio según sea necesario */
+}
+
+#folioCanvas {
+  border: 1px solid #ccc; /* Borde del canvas para separarlo del fondo blanco */
+  background-color: #ffffff;
+}
+
+.floating-buttons {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  button {
+    padding: 10px;
+    cursor: pointer;
+    /* Añade estilos adicionales según sea necesario */
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #eee;
+}
+
+button {
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: #fff;
+  border: none;
+  outline: none;
+}

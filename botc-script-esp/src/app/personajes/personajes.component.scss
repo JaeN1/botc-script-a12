@@ -1,0 +1,81 @@
+/* menu.component.css */
+
+:host {
+    border: 2px solid #2ecc71; /* Borde verde para el componente Menu */
+    padding: 10px;
+    display: block;
+  }
+  
+// /* personajes.component.css */
+// .personajes-list {
+//     overflow-y: auto;/* Agrega un scroll vertical si es necesario */
+//     max-height: 500px; /* Establece la altura máxima para mostrar antes de agregar el scroll */
+//     /* Agrega más estilos según sea necesario */
+//     h3 {
+//       font-family: "Dumbledor";
+//       font-size: 14px;
+//       color: #b89647;
+//       text-transform: capitalize;
+//       border: 1px solid rgba(0, 0, 0, 0);
+//       padding: 10px 0;
+//       margin: 10px 20px 15px;
+//     }
+  
+//     // Estilos para cada personaje
+//     button {
+//       display: flex; // Alineación horizontal del icono y el nombre
+//       align-items: center; // Alinea verticalmente el icono y el texto
+//       font-weight: bold;
+//       font-family: "Trade Gothic LT Std";
+//       color: rgb(92, 31, 34);
+  
+//       // Estilo para el ícono del personaje
+//       img {
+//         width: 32px;
+//         height: 32px;
+//         margin-right: 10px; // Espaciado entre el icono y el nombre
+//       }
+
+//        // Estilos para el nombre del personaje
+//       span {
+//       font-weight: bold;
+//       font-family: "Trade Gothic LT Std";
+//       color: rgb(92, 31, 34);
+//       }
+//     }
+//   }
+  
+.personajes-list {
+  overflow-y: auto;/* Agrega un scroll vertical si es necesario */
+       max-height: 500px; /* Establece la altura máxima para mostrar antes de agregar el scroll */
+  .role-group {
+    .role-title {
+      font-family: "Dumbledor";
+      font-size: 14px;
+      color: #b89647;
+      text-transform: capitalize;
+      border: 1px solid rgba(0,0,0,0);
+      padding: 10px 0;
+      margin: 10px 20px 15px;
+    }
+
+    .personaje-item {
+      .personaje-button {
+        display: flex;
+        align-items: center;
+
+        .personaje-icon {
+          width: 32px;
+          height: 32px;
+          margin-right: 10px;
+        }
+
+        .personaje-name {
+          font-weight: bold;
+          font-family: "Trade Gothic LT Std";
+          color: rgb(92, 31, 34);
+        }
+      }
+    }
+  }
+}

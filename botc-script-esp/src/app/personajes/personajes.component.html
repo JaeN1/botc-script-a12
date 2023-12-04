@@ -1,0 +1,21 @@
+<!-- personajes.component.html -->
+<div> 
+    <div class="personajes-list">
+      <div *ngFor="let roleType of objectKeys(personajesAgrupados)" class="role-group">
+        <h3 class="role-title">{{ roleType }}</h3>
+        <div *ngFor="let personaje of personajesAgrupados[roleType]" class="personaje-item">
+          <button (click)="seleccionarPersonaje(personaje)" class="personaje-button">
+            <img [src]="getIconPath(personaje.name)" alt="{{ personaje.name }}" class="personaje-icon">
+            <span class="personaje-name">{{ personaje.name }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    
+  
+    
+
+
+
+</div>
