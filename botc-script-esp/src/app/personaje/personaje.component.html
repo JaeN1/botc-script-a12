@@ -1,0 +1,13 @@
+<!-- personaje.component.html -->
+<div class="personaje-container">
+    <!-- <img [src]="iconPath" class="personaje-icon" alt="Icono"> -->
+    <div class="personaje-info">
+      <h3 class="personaje-name">{{ personaje.name }}</h3>
+      <p class="personaje-description">{{ personaje.description }}</p>
+    </div>
+    <div class="personaje-actions">
+      <button (click)="onAction1()">Acción 1</button>
+      <button (click)="onAction2()">Acción 2</button>
+    </div>
+  </div>
+  

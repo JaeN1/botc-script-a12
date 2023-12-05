@@ -1,16 +1,42 @@
-<!-- app.component.html -->
-<div class="app-container">
-  <div class="sidebar-container">
-    <app-menu></app-menu>
-    <app-personajes (personajeSeleccionado)="manejarSeleccion($event)"></app-personajes>
-  </div>
+<!-- Este será el layout principal de tu aplicación -->
+<div class="app-layout">
+  <!-- Sidebar Izquierda: Filtros y Lista de Personajes -->
+  <aside class="sidebar-left">
+    <app-filters></app-filters> <!-- Componente de filtros -->
+    <app-character-list></app-character-list> <!-- Componente de lista de personajes -->
+  </aside>
 
-  <div class="content-container">
-    <!-- Zona central para el papel A4 -->
+  <!-- Área Central: Folio -->
+  <main class="folio">
+    <app-folio></app-folio> <!-- Componente del folio -->
+  </main>
+
+  <!-- Sidebar Derecha: Botones -->
+  <aside class="sidebar-right">
+    <app-side-buttons></app-side-buttons> <!-- Componente para botones laterales -->
+  </aside>
+</div>
+
+
+<!-- <div class="app-container">
+  <div class="sidebar-container">
+    <app-personajes (personajeSeleccionado)="manejarSeleccion($event)"></app-personajes>
+    
+  </div> -->
+
+  <!-- <div class="content-container">
+    <app-folio></app-folio>
+
     <div class="header-container">
-      <span>SCRIPT NAME by {{ scriptName }}</span>
-      <span>Author: {{ author }}</span>
-      <button (click)="editarCabecera()">✏️</button>
+      <div class="script-editable">
+        <span class="script-name">{{ scriptName }}</span>
+        <span class="by"> por </span>
+        <span class="author-name">{{ author }}</span>
+        <button class="edit-button" (click)="editarCabecera()">
+          ✏️
+        </button>
+      </div>
+
     </div>
     
     <div class="canvas-container">
@@ -20,7 +46,7 @@
 
     <div class="floating-buttons">
       <button (click)="descargarPDF()">Guardar como PDF</button>
-      <!-- Otros botones flotantes según sea necesario -->
+   
     </div>
   </div>
-</div>
+</div> -->

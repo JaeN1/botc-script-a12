@@ -49,16 +49,12 @@ export class PersonajesComponent implements OnInit {
   getIconPath(iconFileName: string): string {
     // console.log(iconFileName)
     return `assets/images/icon/${iconFileName}_icon.png`;
-
   }
-
-  
-  
 
   seleccionarPersonaje(personaje: any) {
     // Solo emite el evento si el personaje no estaba seleccionado antes
     if (this.personajeSeleccionado !== personaje) {
-      this.personajeSeleccionado.emit(personaje);
+       this.personajeSeleccionado.emit(personaje);
     }
   }
 

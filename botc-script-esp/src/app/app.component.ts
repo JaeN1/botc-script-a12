@@ -1,7 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-
+import { TranslationService } from './translation.service';
+import { PersonajesService } from './personajes/personajes.service';
 
 
 @Component({
@@ -17,12 +18,22 @@ export class AppComponent {
   alturaCabecera = 50; // Altura hasta donde llega la cabecera incluyendo la línea de separación
 
   @ViewChild('folioCanvas') folioCanvas!: ElementRef<HTMLCanvasElement>;
+  personajes: any[] | undefined;
 
   ngAfterViewInit() {
     this.setCabeceraDefault();
   }
   ngOnInit() {
+  
     this.setCabeceraDefault();
+    
+    this.personajesService.getPersonajesConTraducciones().subscribe(personajesTraducidos => {
+      this.personajes = personajesTraducidos;
+    });    
+  }
+
+  constructor( private personajesService: PersonajesService ){
+
   }
 
   editarCabecera2() {
@@ -30,6 +41,7 @@ export class AppComponent {
     this.author = prompt('Enter Author:', this.author) || this.author;
     
   }
+
   setCabeceraDefault() {
     // Verificar si la referencia al canvas está disponible
     if (this.folioCanvas && this.folioCanvas.nativeElement) {
@@ -102,40 +114,100 @@ export class AppComponent {
     }
   }
   
-
-
-  manejarSeleccion(personaje: any) {
-    if (!this.personajesSeleccionados.includes(personaje)) {
-      this.personajesSeleccionados.push(personaje);
-      this.agregarPersonajeAlCanvas(personaje);
+  
+  manejarSeleccion(personajeSeleccionado: any) {
+    // Asegúrate de que 'this.personajes' está definido antes de usar 'find'
+    if (this.personajes) {
+      const personajeTraducido = this.personajes.find(p => p.id === personajeSeleccionado.id);
+  
+      if (personajeTraducido) {
+        if (!this.personajesSeleccionados.includes(personajeTraducido)) {
+          this.personajesSeleccionados.push(personajeTraducido);
+          this.agregarPersonajeAlCanvas(personajeTraducido);
+        }
+      } else {
+        console.error('Personaje seleccionado no encontrado en la lista traducida');
+      }
+    } else {
+      console.error('La lista de personajes no está definida');
     }
   }
-
+  
+  
+  
+  
   agregarPersonajeAlCanvas(personaje: any) {
     const canvas = document.getElementById('folioCanvas') as HTMLCanvasElement;
-    
+  
     if (!canvas) {
       console.error("Canvas element not found.");
       return;
     }
-
+  
     const ctx = canvas.getContext('2d');
-
+  
     if (!ctx) {
       console.error("2D rendering context not supported.");
       return;
     }
+  
+    // Espaciado entre líneas y altura inicial de la cabecera
+    const alturaCabecera = 50;
+    const lineHeight = 32;
+    const iconSize = 32;
+    const iconPadding = 10; // Espacio entre el icono y el nombre
+    //const yPosition = alturaCabecera + (this.personajesSeleccionados.length * lineHeight) + 5;
+    const textYPosition = alturaCabecera + (this.personajesSeleccionados.length * lineHeight) + 5;
+    const descriptionYPosition = textYPosition + 20; // Ajusta según sea necesario
+    const textXPosition = 100; // Posición X fija para el texto
+    const iconXPosition = 50; // Posición X fija para el icono
+    // Establece el espaciado y los estilos
+    const startYPosition = 100; // Y posición inicial para comenzar a dibujar
+    // Calcula la posición Y basada en cuántos personajes han sido ya dibujados
+    const yPosition = 10 + (this.personajesSeleccionados.length * (lineHeight + 10));
 
-    /// Espaciado entre líneas
-    const alturaCabecera = 50; // Altura de la cabecera
-    const lineHeight = 20; // Espaciado entre líneas de personajes
-    const yPosition = alturaCabecera + (this.personajesSeleccionados.length * lineHeight) + 5; // +5 para un pequeño espacio debajo de la línea
+    //const yPosition = startYPosition + (this.personajesSeleccionados.length * lineHeight * 2);
 
-    // Dibujar el nombre del personaje en una nueva línea
-    ctx.fillText(personaje.name, 50, yPosition);
+
+    // Configurar el estilo del texto
+    ctx.font = '16px Arial';
+    ctx.fillStyle = 'black';
+  
+    // Comprobar si el personaje tiene un ícono
+    if (personaje.icon) {
+      const iconImage = new Image();
+      iconImage.onload = () => {
+        ctx.drawImage(iconImage, iconXPosition, yPosition, iconSize, iconSize);
+
+        // Dibuja el nombre del personaje
+        ctx.fillText(personaje.name, textXPosition, yPosition + lineHeight);
+  
+        // Cambia el estilo de la fuente para la descripción si es necesario
+        ctx.font = 'italic 14px Arial'; // Estilo para la descripción
+        ctx.fillText(personaje.description, textXPosition, yPosition + lineHeight * 2);
+        
+      };
+      iconImage.onerror = () => {
+        // Si hay un error al cargar el icono, dibujar solo el nombre
+        ctx.fillText(personaje.nombre, 50, yPosition);
+        //Descripcion
+        ctx.fillText(personaje.description, 50, descriptionYPosition);
+
+      };
+      iconImage.src = this.getIconPath(personaje.name); // Establecer la fuente después de definir onload y onerror
+    } else {
+      // Dibuja solo el texto si no hay icono
+      ctx.fillText(personaje.name, textXPosition, yPosition + lineHeight);
+      ctx.font = 'italic 14px Arial'; // Estilo para la descripción
+      ctx.fillText(personaje.description, textXPosition, yPosition + lineHeight * 2);
+
+    }
   }
-
-
+  
+  getIconPath(iconFileName: string): string {
+    // console.log(iconFileName)
+    return `assets/images/icon/${iconFileName}_icon.png`;
+  }
   
   descargarPDF() {
     console.log('descargarPDF llamado');
@@ -166,4 +238,5 @@ export class AppComponent {
   }
 
   }
+
 }

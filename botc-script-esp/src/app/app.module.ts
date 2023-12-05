@@ -11,12 +11,22 @@ import { HttpClientModule } from '@angular/common/http';
 // Importa las bibliotecas necesarias
 import * as html2canvas from 'html2canvas';
 import * as jsPDF from 'jspdf';
+import { PersonajeComponent } from './personaje/personaje.component';
+import { FolioComponent } from './folio/folio.component';
+import { FiltersComponent } from './filters/filters.component';
+import { CharacterListComponent } from './character-list/character-list.component';
+import { SideButtonsComponent } from './side-buttons/side-buttons.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    PersonajesComponent
+    PersonajesComponent,
+    PersonajeComponent,
+    FolioComponent,
+    FiltersComponent,
+    CharacterListComponent,
+    SideButtonsComponent
   ],
   imports: [
     BrowserModule,

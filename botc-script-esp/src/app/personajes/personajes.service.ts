@@ -2,13 +2,16 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-
+import { forkJoin } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonajesService {
   private apiUrl = '../assets/roles.json'
+  private apiTranslateUrl = '../assets/translation-es.json'
+  private translations: any = {};
 
   constructor(private http: HttpClient) { }
 
@@ -35,4 +38,23 @@ export class PersonajesService {
   updateSelectedEditions(selectedEditions: string[]) {
     this.selectedEditionsSubject.next(selectedEditions);
   }
+
+  getPersonajesConTraducciones(): Observable<any[]> {
+    return forkJoin({
+      roles: this.http.get<any[]>(this.apiUrl),
+      translations: this.http.get<any>(this.apiTranslateUrl)
+    }).pipe(
+      map(({ roles, translations }) => 
+        roles.map(role => ({
+          ...role,
+          nombre: translations[role.id]?.name || role.nombre,
+          description: translations[role.id]?.description || role.description
+          // Agrega aquí más campos si necesitas traducir algo más
+        }))
+      )
+    );
+  }
+
+
+
 }

@@ -1,0 +1,33 @@
+<div class="character-list-container">
+    <div class="search-container">
+      <input type="text" placeholder="Search by name" (input)="filterCharacters($event)">
+    </div>
+  
+    <!-- <h3>TOUNSFOLK</h3>
+    <div class="characters">
+      <div *ngFor="let character of filteredCharacters" class="character-item" (click)="seleccionarPersonaje(character)">
+        <img [src]="getIconPath(character.name)" alt="{{ character.nombre }}" class="character-icon">
+        <span class="character-name">{{ character.nombre }}</span>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="characters">
+    <div *ngFor="let character of filteredCharacters" 
+         class="character-item" 
+         [ngClass]="{'character-selected': isSelected(character)}"
+         (click)="seleccionarPersonaje(character)">
+      <img [src]="getIconPath(character.name)" 
+           alt="{{ character.nombre }}" 
+           class="character-icon">
+      <span class="character-name">{{ character.nombre }}</span>
+    </div>
+  </div>
+  
+
+  
+
+  <div class="actions">
+    <button (click)="clearSelection()">CLEAR</button>
+    <button (click)="randomizeSelection()">RANDOMIZE</button>
+  </div>

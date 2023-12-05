@@ -1,0 +1,68 @@
+.character-list-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-height: 500px; /* Altura máxima antes de usar scroll */
+    overflow-y: auto; /* Scroll vertical si es necesario */
+  
+    .search-container {
+      padding: 0.5rem;
+      background: #ececec;
+      input {
+        width: 100%;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 5px;
+      }
+    }
+    
+    h3 { /* Estilo para el título de la categoría */
+      font-family: "Dumbledor";
+      font-size: 14px;
+      color: #b89647;
+      text-transform: capitalize;
+      border: 1px solid rgba(0,0,0,0);
+      padding: 10px 0;
+      margin: 10px 20px 15px;
+    }
+    
+    .characters {
+      .character-item {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        transition: background-color 0.3s;
+        &:hover {
+          background-color: #f4f4f4;
+        }
+        .character-icon { /* Estilos para el icono del personaje */
+          width: 32px;
+          height: 32px;
+          margin-right: 10px;
+        }
+        .character-name { /* Estilos para el nombre del personaje */
+          font-weight: bold;
+          font-family: "Trade Gothic LT Std";
+          color: rgb(92, 31, 34);
+        }
+
+      }
+    }
+  }
+  .character-selected {
+    background-color: #c1d4dd; /* Un gris claro, ajusta el color según tu diseño */
+    color: #777;
+  }
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+  

@@ -1,0 +1,100 @@
+  /* folio.component.scss */
+  :host {
+    display: block;
+    height: 100vh;
+    background-color: #f0f0f0; // Fondo gris para todo el componente
+    display: flex;
+    justify-content: center;
+    //align-items: center;
+    background-image: url('/assets/bg-mandala.webp'); /* Ruta relativa al directorio de assets */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .script-header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  
+  .script-name-input, .author-input {
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .character-area {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  .folio-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    max-width: 210mm; // Ancho máximo de un folio A4
+    max-height: 297mm; // Altura máxima de un folio A4
+    width: 43vw; // El ancho es el 80% del ancho de la ventana
+    height: auto; // La altura se ajusta automáticamente
+    aspect-ratio: 210 / 297; // Mantiene la proporción A4
+    background-color: #ffffff; // Fondo blanco para el "folio"
+    box-shadow: 0 2mm 4mm rgba(0, 0, 0, 0.2); // Sombra para dar la impresión de estar "elevado"
+    display: flex;
+    flex-direction: column;
+    padding: 1%; // Un padding proporcional
+    box-sizing: border-box;
+    overflow: hidden; // Evita el desbordamiento del contenido
+    // transform: translateY(-50%);
+    // top: 47%;
+    position: relative;
+  }
+  
+.character-entry {
+    display: block; /* Asegura que cada entrada sea un bloque */
+    width: 100%; /* Ocupa toda la anchura disponible */
+    margin-bottom: 10px; /* Espacio entre entradas de personajes */
+    /* Otros estilos que desees aplicar */
+  }
+  
+
+  .character-list {
+    list-style-type: none; /* Elimina los estilos de lista predeterminados */
+    padding: 0; /* Elimina el padding predeterminado */
+  }
+
+
+  .character-list-header, .character-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f0eded;
+    padding: 1px;
+  }
+  
+  .character-list-header {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  .character-icon { /* Estilos para el icono del personaje */
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
+  
+  .character-name {
+    flex: 0.8; /* Ocupa el espacio restante */
+    padding-right: 0px;
+    font-style: oblique;
+  }
+  
+  .character-description {
+    flex: 4; /* Ajusta esto según el espacio que quieras dar a la descripción */
+  }

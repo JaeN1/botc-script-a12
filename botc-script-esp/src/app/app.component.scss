@@ -5,7 +5,7 @@
 }
 
 .sidebar-container {
-  width: 30em;
+  width: 20em;
   background-color: #f0f0f0; /* Fondo gris claro para la barra lateral */
   padding: 20px;
   /* Otros estilos de la barra lateral según sea necesario */
@@ -31,16 +31,16 @@
   position: relative;
 }
 
-.folio-container {
-  background-color: white; /* Color blanco para simular el papel A4 */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para resaltar el papel */
-  /* Otros estilos del área del folio según sea necesario */
-}
+// .folio-container {
+//   background-color: white; /* Color blanco para simular el papel A4 */
+//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para resaltar el papel */
+//   /* Otros estilos del área del folio según sea necesario */
+// }
 
-#folioCanvas {
-  border: 1px solid #ccc; /* Borde del canvas para separarlo del fondo blanco */
-  background-color: #ffffff;
-}
+// #folioCanvas {
+//   border: 1px solid #ccc; /* Borde del canvas para separarlo del fondo blanco */
+//   background-color: #ffffff;
+// }
 
 .floating-buttons {
   position: fixed;
@@ -59,12 +59,35 @@
 }
 
 .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #eee;
+  .script-editable {
+    display: flex;
+    align-items: center; // Alinea el texto y el botón de edición
+    font-family: 'TuFuente', sans-serif; // Reemplaza 'TuFuente' con la fuente que desees
+    font-size: 1rem; // Ajusta el tamaño de la fuente según sea necesario
+
+    .script-name,
+    .author-name {
+      font-weight: bold; // Texto en negrita
+    }
+
+    .by {
+      margin: 0 0.5rem; // Espacio entre el nombre del guión y "by"
+    }
+
+    .edit-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      // Añade estilos adicionales si es necesario
+    }
+  }
+
+  .characters-message {
+    font-family: 'TuFuente', sans-serif;
+    // Añade estilos adicionales si es necesario
+  }
 }
+
 
 button {
   cursor: pointer;
@@ -72,4 +95,45 @@ button {
   background-color: #fff;
   border: none;
   outline: none;
+}
+
+
+
+
+
+
+
+
+////////////////////////////////////
+/// /* Ajusta los estilos para que coincidan con el diseño que buscas */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.sidebar-left {
+  width: 400px; /* Ajustar según el diseño */
+  background-color: #ececec; /* Fondo claro para la sidebar */
+  display: flex;
+  flex-direction: column;
+  background-image: url('/assets/lateral.jpeg'); /* Ruta relativa al directorio de assets */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.folio {
+  flex-grow: 1; /* El folio ocupa el espacio restante */
+  background-color: #fff;
+  //border: 3px solid green; /* Borde verde para destacar el folio */
+  margin: 0 10px; /* Espacio alrededor del folio */
+}
+
+.sidebar-right {
+  width: 50px; /* Ajustar según el diseño */
+  background-color: #ececec; /* Fondo claro para la sidebar */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar los botones horizontalmente */
 }

@@ -1,0 +1,38 @@
+{
+    "Steward": {
+      "name": "Administrador",
+      "description": "El administrador es responsable de..."
+    },
+    "Knight": {
+      "name": "Caballero",
+      "description": "El caballero protege el reino de..."
+    },
+    "Noble": {
+      "name": "Noble",
+      "description": "El noble ayuda a guiar al pueblo con..."
+    },
+    "Chef": {
+      "name": "Chef",
+      "description": "El Chef ayuda a guiar al pueblo con..."
+    },
+    "Investigator": {
+      "name": "Investigador",
+      "description": "El Investigador ayuda a guiar al pueblo con..."
+    },
+    "Washerwoman": {
+      "name": "Lavandera",
+      "description": "El Lavandera ayuda a guiar al pueblo con..."
+    },
+    "Clockmaker": {
+      "name": "Relojero",
+      "description": "El Relojero ayuda a guiar al pueblo con..."
+    },
+    "Librarian": {
+      "name": "Bibliotecario",
+      "description": "El Bibliotecario ayuda a guiar al pueblo con..."
+    },
+    "Grandmother": {
+      "name": "Abuela",
+      "description": "El Abuela ayuda a guiar al pueblo con..."
+    }
+  }
