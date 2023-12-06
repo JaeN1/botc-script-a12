@@ -1,7 +1,7 @@
   /* folio.component.scss */
   :host {
-    display: block;
-    height: 100vh;
+    //display: block;
+    //height: 100vh;
     background-color: #f0f0f0; // Fondo gris para todo el componente
     display: flex;
     justify-content: center;
@@ -37,14 +37,14 @@
 
   
   .folio-container {
-    display: flex;
-    flex-direction: column;
+    //display: flex;
+    //flex-direction: column;
     margin: 20px;
-    max-width: 210mm; // Ancho máximo de un folio A4
-    max-height: 297mm; // Altura máxima de un folio A4
-    width: 43vw; // El ancho es el 80% del ancho de la ventana
-    height: auto; // La altura se ajusta automáticamente
-    aspect-ratio: 210 / 297; // Mantiene la proporción A4
+    //max-width: 210mm; // Ancho máximo de un folio A4
+    //max-height: 297mm; // Altura máxima de un folio A4
+    width: 210mm; // El ancho es el 80% del ancho de la ventana
+    height: 297mm; // La altura se ajusta automáticamente
+    //aspect-ratio: 210 / 297; // Mantiene la proporción A4
     background-color: #ffffff; // Fondo blanco para el "folio"
     box-shadow: 0 2mm 4mm rgba(0, 0, 0, 0.2); // Sombra para dar la impresión de estar "elevado"
     display: flex;
@@ -54,7 +54,7 @@
     overflow: hidden; // Evita el desbordamiento del contenido
     // transform: translateY(-50%);
     // top: 47%;
-    position: relative;
+    //position: relative;
   }
   
 .character-entry {

@@ -12,6 +12,8 @@ export class FolioComponent implements OnInit {
   personajesSeleccionados: any[] = [];
   selectedCharacter: any;
   selectedCharacters: any[] = []; // Inicializa como un arreglo vacío
+  hasTownsfolk: boolean = false;
+
 
   constructor(private personajesService: PersonajesService,
     private characterService: CharacterService,

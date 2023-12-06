@@ -114,7 +114,7 @@ button {
 
 .sidebar-left {
   width: 400px; /* Ajustar según el diseño */
-  background-color: #ececec; /* Fondo claro para la sidebar */
+  //background-color: #ececec; /* Fondo claro para la sidebar */
   display: flex;
   flex-direction: column;
   background-image: url('/assets/lateral.jpeg'); /* Ruta relativa al directorio de assets */
@@ -132,7 +132,7 @@ button {
 
 .sidebar-right {
   width: 50px; /* Ajustar según el diseño */
-  background-color: #ececec; /* Fondo claro para la sidebar */
+  //background-color: #ececec; /* Fondo claro para la sidebar */
   display: flex;
   flex-direction: column;
   align-items: center; /* Centrar los botones horizontalmente */
