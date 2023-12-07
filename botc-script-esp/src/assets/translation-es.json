@@ -1,42 +1,614 @@
 {
-    "Steward": {
-      "name": "Administrador",
-      "description": "El administrador es responsable de..."
-    },
-    "Knight": {
-      "name": "Caballero",
-      "description": "El caballero protege el reino de..."
-    },
-    "Noble": {
-      "name": "Noble",
-      "description": "El noble ayuda a guiar al pueblo con..."
-    },
-    "Chef": {
-      "name": "Chef",
-      "description": "El Chef ayuda a guiar al pueblo con..."
-    },
-    "Investigator": {
-      "name": "Investigador",
-      "description": "El Investigador ayuda a guiar al pueblo con..."
-    },
-    "Washerwoman": {
-      "name": "Lavandera",
-      "description": "El Lavandera ayuda a guiar al pueblo con..."
-    },
-    "Clockmaker": {
+  "Acrobat": {
+      "name": "Acróbata",
+      "description": "Cada noche*, si alguno de tus vecinos buenos vivos están borrachos o envenenados, mueres."
+  },
+  "Alchemist": {
+      "name": "Alquimista",
+      "description": "Tienes la habilidad de un Esbirro que no está en la partida."
+  },
+  "Al-Hadikhia": {
+      "name": "al-Hadikhia",
+      "description": "Cada noche*, elige a 3 jugadores (todos los jugadores sabrán a quiénes): cada uno decide en privado si vive o muere, pero si todos viven, todos morirán."
+  },
+  "Amnesiac": {
+      "name": "Amnésica",
+      "description": "No sabes cuál es tu habilidad. Cada día, intenta adivinarla en privado: te dirán lo cerca que has estado (frío/templado/caliente/bingo)."
+  },
+  "Angel": {
+      "name": "Ángel",
+      "description": "Algo malo puede pasarle al principal responsable de la muerte de 1 jugador nuevo."
+  },
+  "Apprentice": {
+      "name": "Aprendiz",
+      "description": "Tu 1ª noche, ganas una habilidad de aldeano (si eres bueno), o 1 habilidad de esbirro (si eres malvado)."
+  },
+  "Artist": {
+      "name": "Artista",
+      "description": "Una vez por partida, durante el día, puedes preguntar en privado al Narrador cualquier pregunta de respuesta sí o no."
+  },
+  "Assassin": {
+      "name": "Asesino",
+      "description": "Una vez por partida, por la noche*, elige a 1 jugador: muere irremediablemente."
+  },
+  "Atheist": {
+      "name": "Ateo",
+      "description": "El Narrador puede romper las reglas del juego y, si es ejecutado, el Bien gana, incluso aunque estés muerto. [No hay jugadores del Mal]"
+  },
+  "Balloonist": {
+      "name": "Aeronauta",
+      "description": "Cada noche descubrirás a 1 jugador de cada tipo de personaje, hasta que no haya más tipos. [+1 Forastero]"
+  },
+  "Barber": {
+      "name": "Barbero",
+      "description": "Si has muerto (durante el día o la noche), el Demonio puede elegir a 2 jugadores (no otro Demonio) para que intercambien sus personajes."
+  },
+  "Barista": {
+      "name": "Barista",
+      "description": "Cada noche, hasta el anochecer, el narrador escoge a 1 jugador y hasta el anochecer: a) Se vuelve sobrio y sano y recibe información verdadera, o b) Su habilidad se activa dos veces."
+  },
+  "Baron": {
+      "name": "Barón",
+      "description": "Hay Forasteros adicionales en juego. [+2 Forasteros]"
+  },
+  "Beggar": {
+      "name": "Mendigo",
+      "description": "Necesitas una ficha de voto fantasma para votar. Si 1 jugador muerto te la da, descubres su bando. Tú estás sobrio y sano."
+  },
+  "Bishop": {
+      "name": "Obispo",
+      "description": "Solo el Narrador puede nominar. Como mínimo debe nominar a 1 jugador del bando contrario del obispo."
+  },
+  "Bone Collector": {
+    "name": "Coleccionista de Huesos",
+    "description": "Una vez por partida, por la noche, escoge a 1 jugador muerto; recupera su habilidad hasta el anochecer."
+  },
+  "Boomdandy": {
+      "name": "Boomdandy",
+      "description": "Si te ejecutan, mueren todos los jugadores excepto 3. Después de 1 minuto, quien tenga a más jugadores apuntándole, muere."
+  },
+  "Bounty Hunter": {
+    "name": "Cazarrecompensas",
+    "description": "Comienzas conociendo a 1 jugador malvado. Si ese jugador muere, descubrirás a otro jugador maligno esa noche. [1 Aldeano es malvado]"
+  },
+  "Buddhist": {
+      "name": "Budista",
+      "description": "Durante los dos primeros minutos de cada día, los jugadores veteranos no pueden hablar."
+  },
+  "Bureaucrat": {
+      "name": "Burócrata",
+      "description": "Cada noche, escoge a 1 jugador (no a ti mismo): mañana su voto contará como tres votos."
+  },
+  "Butcher": {
+      "name": "Carnicero",
+      "description": "Cada día, después de la 1ª ejecución, puedes nominar de nuevo."
+  },
+  "Butler": {
+      "name": "Mayordomo",
+      "description": "Cada noche elige a 1 jugador distinto a ti (puedes repetir el anterior). Durante el día solo puedes votar si él también vota."
+  },
+  "Cannibal": {
+      "name": "Caníbal",
+      "description": "Obtienes la habilidad del ejecutado más reciente. Si es malvado, estarás envenenado hasta que un jugador honrado muera ejecutado."
+  },
+  "Cerenovus": {
+      "name": "Descerebrado",
+      "description": "Cada noche elige a 1 jugador y a un personaje: mañana él se muestra convencido de ser ese personaje, de lo contrario puede ser ejecutado."
+  },
+  "Chambermaid": {
+      "name": "Sirvienta",
+      "description": "Cada noche elige a 2 jugadores vivos (no a ti mismo): descubres cuántos de esos jugadores han despertado esta noche por su habilidad."
+  },
+  "Chef": {
+      "name": "Cocinero",
+      "description": "Empiezas descubriendo cuántos pares de jugadores malvados hay (sentados uno al lado del otro)."
+  },
+  "Choirboy": {
+      "name": "Corista",
+      "description": "Si el Demonio mata a El Rey, sabrás qué jugador es el Demonio. [+ El Rey]"
+  },
+  "Clockmaker": {
       "name": "Relojero",
-      "description": "El Relojero ayuda a guiar al pueblo con..."
-    },
-    "Librarian": {
+      "description": "Empiezas descubriendo a cuántos jugadores está el Demonio de su Esbirro más cercano."
+  },
+  "Courtier": {
+      "name": "Cortesano",
+      "description": "Una vez por partida, por la noche, elige a un personaje: pasa a estar borracho durante 3 días y 3 noches."
+  },
+  "Cult Leader": {
+    "name": "Líder Sectario",
+    "description": "Cada noche, pasas al bando de un vecino vivo. Si todos los personajes del Bien deciden unirse a tu secta, tu equipo gana."
+  },
+  "Damsel": {
+      "name": "Damisela",
+      "description": "Todos los Esbirros saben que estás en la partida. Si un Esbirro adivina quién eres en público (un solo intento), tu bando pierde."
+  },
+  "Deusexfiasco": {
+      "name": "Deus ex Fiasco",
+      "description": "Once per game, the Storyteller will make a \"mistake\", correct it and publicly admit to it."
+  },
+  "Deviant": {
+      "name": "Desviado",
+      "description": "Si hoy fuiste gracioso, no puedes ser exiliado."
+  },
+  "Devil's Advocate": {
+      "name": "Abogado del diablo",
+      "description": "Cada noche elige a 1 jugador vivo (diferente que la noche anterior): no muere si es ejecutado."
+  },
+  "Djinn": {
+      "name": "Genio",
+      "description": "Utiliza la regla especial del Genio. Todos los jugadores saben cuál es."
+  },
+  "Doomsayer": {
+      "name": "Agorero",
+      "description": "Si 4 o más jugadores están vivos, cada uno de ellos puede utilizar públicamente la habilidad del Agorero (una vez por partida), ésta provocará que muera 1 jugador de su propio bando (elegido por el Narrador)."
+  },
+  "Dreamer": {
+      "name": "Soñador",
+      "description": "Cada noche elige a 1 jugador (ni a ti, ni a Viajeros): descubres un personaje bueno y uno malvado, solo uno de los dos es correcto."
+  },
+  "Drunk": {
+    "name": "Borracho",
+    "description": "No sabes que eres el Borracho. Crees que eres un Aldeano, pero no lo eres en realidad."
+  },
+  "Duchess": {
+      "name": "Duquesa",
+      "description": "Cada día, 3 jugadores pueden elegir visitarte. Por la noche*, cada visitante conoce cuántos visitantes son malvados, pero 1 de ellos recibe información falsa."
+  },
+  "Empath": {
+      "name": "Émpatica",
+      "description": "Cada noche descubres cuántos de tus dos vecinos vivos son malvados."
+  },
+  "Engineer": {
+      "name": "Ingeniero",
+      "description": "Una vez por partida, durante la noche, elige qué Esbirros o qué Demonio está en juego."
+  },
+  "Evil Twin": {
+      "name": "Gemela Malvada",
+      "description": "Os conocéis tú y otro jugador del bando contrario. Si él muere ejecutado, los malvados ganan. Los buenos no pueden ganar si estáis los 2 vivos."
+  },
+  "Exorcist": {
+      "name": "Exorcista",
+      "description": "Cada noche* elige a 1 jugador (diferente que la noche anterior): si es el Demonio te descubre, pero no despierta esa noche."
+  },
+  "Fang Gu": {
+      "name": "Fang Gu",
+      "description": "Cada noche* elige a 1 jugador: muere. El 1º Forastero que mates se convierte en el nuevo Fang Gu y tú mueres en su lugar. [+1 Forastero]"
+  },
+  "Farmer": {
+      "name": "Granjero",
+      "description": "Si mueres durante la noche, un jugador vivo del bien se convierte en el Granjero."
+  },
+  "Fearmonger": {
+    "name": "Azotamentes",
+    "description": "Cada noche, elige a un jugador: si lo nominas y es ejecutado, su equipo pierde. Todos los jugadores saben si has elegido a un nuevo jugador."
+  },
+  "Ferryman": {
+      "name": "Barquero",
+      "description": "El último día, todos los jugadores muertos recuperan su ficha de voto."
+  },
+  "Fibbin": {
+      "name": "Tramposillo",
+      "description": "Una vez por partida, 1 jugador bueno puede recibir información falsa."
+  },
+  "Fiddler": {
+      "name": "Violinista",
+      "description": "Una vez por partida, el Demonio escoge en secreto a 1 jugador del bando contrario: todos los jugadores escogen cuál de esos 2 jugadores gana. Ganará todo su bando."
+  },
+  "Fisherman": {
+      "name": "Pescador",
+      "description": "Una vez por partida, durante el día, visita al Narrador para obtener alguna pista que ayude a ganar a tu bando."
+  },
+  "Flower Girl": {
+      "name": "Niña de las Flores",
+      "description": "Cada noche* descubres si el Demonio votó durante el día."
+  },
+  "Fool": {
+      "name": "Bufón",
+      "description": "La primera vez que vayas a morir, no mueres."
+  },
+  "Fortune Teller": {
+      "name": "Adivina o Vidente",
+      "description": "Cada noche elige a 2 jugadores: descubres si alguno es el Demonio. Hay un jugador bueno que percibes como Demonio."
+  },
+  "Gambler": {
+      "name": "Tahúr",
+      "description": "Cada noche* elige a 1 jugador y adivina su personaje: si fallas mueres."
+  },
+  "Gangster": {
+      "name": "Mafioso",
+      "description": "Una vez al día, puedes decidir matar a un vecino vivo, si tu otro vecino vivo está de acuerdo."
+  },
+  "General": {
+      "name": "General",
+      "description": "Cada noche, sabrás qué bando cree el Narrador que va ganando: el Bien, el Mal o ninguno."
+  },
+  "Goblin": {
+    "name": "Goblin",
+    "description": "Si declaras públicamente ser el Goblin cuando te nominan y te ejecutan ese día, tu equipo gana."
+  },
+  "Godfather": {
+      "name": "Padrino",
+      "description": "Empiezas descubriendo qué Forasteros hay en juego. Si muere alguno durante el día, por la noche elige a 1 jugador: muere. [-1 o +1 Forastero]"
+  },
+  "Golem": {
+      "name": "Gólem",
+      "description": "Solo puedes nominar 1 vez por partida. Cuando lo hagas, si el nominado no es el Demonio, morirá."
+  },
+  "Goon": {
+      "name": "Matón",
+      "description": "Cada noche, el 1º jugador que te escoja con su habilidad, se emborracha hasta el anochecer. Te pasas a su bando."
+  },
+  "Gossip": {
+      "name": "Cotilla",
+      "description": "Cada día puedes hacer una declaración pública. Si era cierta, un jugador muere esa noche."
+  },
+  "Grandmother": {
+      "name": "Abuelita",
+      "description": "Empiezas descubriendo a 1 jugador bueno y su personaje (es tu Nieto). Si el Demonio lo mata, tú también mueres."
+  },
+  "Gunslinger": {
+      "name": "Pistolero",
+      "description": "Cada día, después de que la 1ª votación haya terminado, puedes matar a 1 jugador que haya votado."
+  },
+  "Harlot": {
+      "name": "Prostituta",
+      "description": "Cada noche*, escoge a 1 jugador vivo: si él está de acuerdo, descubres su personaje, pero ambos podríais morir."
+  },
+  "Harpy": {
+      "name": "Arpía",
+      "description": "Cada noche escoge a 2 jugadores: mañana, el 1º está convencido que el 2º es malvado, o ambos pueden morir."
+  },
+  "Hell's Librarian": {
+      "name": "Bibliotecario infernal",
+      "description": "Algo malo puede pasarle a cualquiera que hable cuando el Narrador haya pedido silencio."
+  },
+  "Heretic": {
+      "name": "Hereje",
+      "description": "El bando ganador, pierde y el bando perdedor, gana, aunque estés muerto."
+  },
+  "High Priestess": {
+      "name": "Suma Sacerdotisa",
+      "description": "Cada noche descubres con qué jugador cree el Narrador que deberías hablar."
+  },
+  "Huntsman": {
+      "name": "Galán",
+      "description": "Una vez por partida, durante la noche, elige a un jugador vivo: si eliges a la Doncella, esta se convierte en un Aldeano no presente en la partida. [+la Doncella]"
+  },
+  "Imp": {
+      "name": "Diablillo",
+      "description": "Cada noche* elige a 1 jugador: muere. Si te matas a ti mismo, un Esbirro se convierte en el Demonio."
+  },
+  "Innkeeper": {
+    "name": "Posadero",
+    "description": "Cada noche* elige a 2 jugadores: no pueden morir esa noche, pero 1 se emborracha hasta el anochecer."
+  },
+  "Investigator": {
+      "name": "Investigador",
+      "description": "Empiezas descubriendo que 1 de 2 jugadores es un Esbirro en concreto."
+  },
+  "Judge": {
+      "name": "Juez",
+      "description": "Una vez por partida, si otro jugador es nominado, lo puedes perdonar si es condenado o condenar si es perdonado."
+  },
+  "Juggler": {
+      "name": "Malabarista",
+      "description": "El primer día adivina públicamente el personaje de hasta 5 jugadores. Durante la noche descubres cuántos acertaste."
+  },
+  "King": {
+      "name": "Rey",
+      "description": "Cada noche, si hay más jugadores muertos que vivos, descubrirás 1 personaje vivo. El Demonio sabe quién eres."
+  },
+  "Klutz": {
+      "name": "Torpe",
+      "description": "Cuando descubras que has muerto, elige a 1 jugador vivo públicamente: si es malvado tu bando pierde."
+  },
+  "Knight": {
+      "name": "Caballero",
+      "description": "Empiezas descubriendo 2 jugadores que no son el Demonio."
+  },
+  "Legion": {
+      "name": "Legión",
+      "description": "Cada noche*, un jugador puede morir. Las ejecuciones fallan si solo vota el bando del Mal. Puedes ser percibido como un Esbirro. [La mayoría de los jugadores son Legión.]"
+  },
+  "Leviathan": {
+      "name": "Leviatán",
+      "description": "Si más de 1 jugador bueno es ejecutado, ganas. Todos los jugadores saben que estás en la partida. Tras el 5º día, gana el bando del Mal."
+  },
+  "Librarian": {
       "name": "Bibliotecario",
-      "description": "El Bibliotecario ayuda a guiar al pueblo con..."
-    },
-    "Grandmother": {
-      "name": "Abuela",
-      "description": "El Abuela ayuda a guiar al pueblo con..."
-    },
-    "Drunk": {
-      "name": "Borracho",
-      "description": "El Borracho ayuda a guiar al pueblo con ALCOHOL..."
-    }
+      "description": "Empiezas descubriendo que 1 de 2 jugadores es un Forastero en concreto (o que no hay ninguno)."
+  },
+  "Lil' Monsta": {
+      "name": "Monstruito",
+      "description": "Cada noche, los Esbirros eligen quién cuida de la ficha del Monstruito y 'es el Demonio'. Un jugador muere cada noche*. [+1 Esbirro]"
+  },
+  "Lleech": {
+      "name": "Sanguijuela",
+      "description": "Cada noche*, elige a un jugador: muere. Comienzas eligiendo a un jugador vivo: envenenado. Tú mueres única y exclusivamente si él muere."
+  },
+  "Lunatic": {
+      "name": "Lunático",
+      "description": "Piensas que eres el Demonio, pero no lo eres. El Demonio te conoce y sabe quién eliges cada noche."
+  },
+  "Lycanthrope": {
+      "name": "Licántropo",
+      "description": "Cada noche*, elige a un jugador vivo: si es bueno, muere, pero es el único jugador que puede morir esta noche."
+  },
+  "Magician": {
+    "name": "Mago",
+    "description": "El Demonio cree que eres un Esbirro. Los Esbirros creen que eres un Demonio."
+  },
+  "Marionette": {
+      "name": "Marioneta",
+      "description": "Crees que eres un personaje bueno, pero no lo eres. El Demonio sabe quién eres. [Estás sentado al lado del Demonio.]"
+  },
+  "Mastermind": {
+      "name": "Mente Maestra",
+      "description": "Si el Demonio muere por ejecución (terminando la partida), juega un día más. Si 1 jugador es ejecutado, su bando pierde."
+  },
+  "Mathematician": {
+      "name": "Matemático",
+      "description": "Cada noche descubres cuántas habilidades no funcionaron correctamente, desde el amanecer, por culpa de la habilidad de otro personaje."
+  },
+  "Matron": {
+      "name": "Matrona",
+      "description": "Nadie puede dejar su asiento para hablar en privado. Cada día puedes escoger hasta 3 parejas para cambiar sus asientos."
+  },
+  "Mayor": {
+      "name": "Alcalde",
+      "description": "Si solo quedan 3 jugadores vivos y no hay ejecución, tu equipo gana. Si mueres durante la noche, puede que muera otro jugador en tu lugar."
+  },
+  "Mezepheles": {
+      "name": "Mezéfeles",
+      "description": "Comienzas descubriendo una palabra secreta. El 1º jugador bueno que diga esta palabra pasa al bando del mal esa noche."
+  },
+  "Minstrel": {
+      "name": "Juglar",
+      "description": "Cuando un Esbirro muere por ejecución, el resto de jugadores (excepto Viajeros) se emborrachan hasta el anochecer del día siguiente."
+  },
+  "Monk": {
+      "name": "Monje",
+      "description": "Cada noche* elige a 1 jugador (no a ti mismo): esa noche estará a salvo del Demonio."
+  },
+  "Moonchild": {
+      "name": "Hijo de la Luna",
+      "description": "Cuando descubras que has muerto, elige a 1 jugador vivo públicamente. Esa noche muere si era bueno."
+  },
+  "Mutant": {
+      "name": "Mutante",
+      "description": "Si te muestras convencido de ser un Forastero, puedes ser ejecutado."
+  },
+  "Nightwatchman": {
+      "name": "Vigilante nocturno",
+      "description": "Una vez por partida, durante la noche, elige a un jugador: sabrá qué personaje eres."
+  },
+  "Noble": {
+      "name": "Noble",
+      "description": "Comienzas descubriendo que solo 1 de 3 jugadores es malvado."
+  },
+  "Nodashii": {
+      "name": "No Dashii",
+      "description": "Cada noche* elige a 1 jugador: muere. Tus dos Aldeanos vecinos están envenenados."
+  },
+  "Oracle": {
+      "name": "Oráculo",
+      "description": "Cada noche* descubres cuántos jugadores muertos son malvados."
+  },
+  "Organ Grinder": {
+    "name": "Organista Ambulante",
+    "description": "Todos los jugadores votan con los ojos cerrados y el recuento de votos es secreto. Los votos a ti, solo cuentan si tú también te votas."
+},
+"Pacifist": {
+    "name": "Pacifista",
+    "description": "Los jugadores buenos ejecutados pueden no morir."
+},
+"Philosopher": {
+    "name": "Filósofo",
+    "description": "Una vez por partida, durante la noche elige a un personaje bueno: ganas esa habilidad. Si ese personaje está en juego, pasa a estar borracho."
+},
+"Pit-Hag": {
+    "name": "Brujo del Caldero",
+    "description": "Cada noche* elige a 1 jugador que se convierte en el personaje que tú digas (si no está en juego). Si creas un Demonio, esa noche las muertes serán arbitrarias."
+},
+"Pixie": {
+    "name": "Pixie",
+    "description": "Comienzas descubriendo que hay 1 Aldeano específico en la partida. Si te muestras 'convencido' de que eres este personaje, obtendrás su habilidad cuando muera."
+},
+"Plague Doctor": {
+    "name": "Doctor de la Peste",
+    "description": "Si mueres, el Narrador gana la habilidad de un Esbirro que no esté en juego."
+},
+"Po": {
+    "name": "Po",
+    "description": "Cada noche* puedes elegir a 1 jugador: muere. Si elegiste no matar a nadie la noche anterior, elige 3 jugadores esta noche: mueren."
+},
+"Poisoner": {
+    "name": "Envenenador",
+    "description": "Cada noche elige a 1 jugador: envenenado hasta el anochecer."
+},
+"Politician": {
+    "name": "Político",
+    "description": "Si has sido el mayor culpable de la derrota de tu equipo, cambias de bando y ganas, incluso si estás muerto."
+},
+"Poppy Grower": {
+    "name": "Cultivador de Adormideras",
+    "description": "Los Esbirros y Demonios no se conocen entre ellos. Si mueres, descubrirán esa noche quién es cada uno de ellos."
+},
+"Preacher": {
+    "name": "Predicador",
+    "description": "Cada noche, elige a un jugador: si un Esbirro es elegido, lo descubrirá. Los Esbirros elegidos pierden su habilidad."
+},
+"Professor": {
+    "name": "Profesor",
+    "description": "Una vez por partida, por la noche*, elige a 1 jugador muerto: si es un Aldeano lo resucitas."
+},
+"Psychopath": {
+    "name": "Psicópata",
+    "description": "Cada día, antes de las nominaciones, puedes elegir públicamente a un jugador: muere. Si te ejecutan, solo morirás si pierdes a piedra-papel-tijera."
+},
+"Pukka": {
+    "name": "Pukka",
+    "description": "Cada noche elige a 1 jugador: envenenado. El anterior envenenado muere y vuelve a estar sano."
+},
+"Puzzlemaster": {
+    "name": "Maestro de Enigmas / Experto en Acertijos",
+    "description": "1 jugador está borracho, incluso aunque mueras. Si adivinas (un solo intento) quién es, sabrás qué personaje es el Demonio, pero si no aciertas, recibirás información falsa."
+},
+"Ravenkeeper": {
+    "name": "Criacuervos",
+    "description": "Si mueres por la noche, serás despertado para elegir a 1 jugador: descubres su personaje."
+},
+"Recluse": {
+    "name": "Ermitaño",
+    "description": "Puedes ser percibido como malvado, tanto como Esbirro como Demonio, incluso muerto."
+},
+"Revolutionary": {
+  "name": "Revolucionario",
+  "description": "Señala 2 jugadores vecinos (los Revolucionarios), que son del mismo bando. Una vez por partida, uno de ellos es falsamente identificado."
+},
+"Riot": {
+  "name": "Motín",
+  "description": "Los nominados mueren, pero pueden nominar de nuevo inmediatamente (el 3º día, están obligados a nominar). Después del día 3, gana el bando del Mal. [Todos los Esbirros son Motín]"
+},
+"Sage": {
+  "name": "Erudito",
+  "description": "Si el Demonio te mata, descubres que él es 1 de 2 jugadores."
+},
+"Sailor": {
+  "name": "Marinero",
+  "description": "No puedes morir. Cada noche elige a 1 jugador vivo: él o tú estáis borrachos hasta el anochecer."
+},
+"Saint": {
+  "name": "Santo",
+  "description": "Si mueres ejecutado, tu equipo pierde."
+},
+"Savant": {
+  "name": "Sabio",
+  "description": "Cada día puedes visitar en privado al Narrador para descubrir dos cosas: una es cierta y la otra falsa."
+},
+"Scapegoat": {
+  "name": "Chivo expiatorio",
+  "description": "Si 1 jugador de tu bando es ejecutado, puedes ser ejecutado en su lugar."
+},
+"Scarlet Woman": {
+  "name": "Dama Escarlata",
+  "description": "Si hay 5 o más jugadores vivos (los Viajeros no cuentan) y el Demonio muere, te conviertes en el Demonio."
+},
+"Seamstress": {
+  "name": "Costurera",
+  "description": "Una vez por partida, durante la noche elige a 2 jugadores (no a ti): descubres si son del mismo bando."
+},
+"Sentinel": {
+  "name": "Centinela",
+  "description": "Puede haber en juego un Forastero más o menos de los establecidos."
+},
+"Shabaloth": {
+  "name": "Shabaloth",
+  "description": "Cada noche* elige a 2 jugadores: mueren. 1 jugador muerto la noche anterior, puede ser resucitado."
+},
+"Slayer": {
+  "name": "Cazador",
+  "description": "Una vez por partida, durante el día, elige públicamente a 1 jugador vivo: si es el Demonio, muere de inmediato."
+},
+"Snake Charmer": {
+  "name": "Encantador de serpientes",
+  "description": "Cada noche elige a 1 jugador vivo: si es el Demonio, cambiáis personaje y bando, él es envenenado."
+},
+"Snitch": {
+  "name": "Chivato",
+  "description": "Los Esbirros empiezan descubriendo 3 personajes que no están en juego."
+},
+"Soldier": {
+  "name": "Soldado",
+  "description": "Estás a salvo del Demonio."
+},
+"Spirit Of Ivory": {
+  "name": "Espíritu de marfil",
+  "description": "No puede haber más de 1 jugador malvado adicional."
+},
+"Spy": {
+  "name": "Espía",
+  "description": "Cada noche ves el Grimorio. Puedes ser percibido como bueno, tanto como Aldeano como Forastero, incluso muerto."
+},
+"Steward": {
+  "name": "Intendente",
+  "description": "Empiezas descubriendo 1 jugador bueno."
+},
+"Storm Catcher": {
+  "name": "Caza-Tormentas",
+  "description": "Nombra un personaje bueno. Si está en la partida, solo puede morir ejecutado, pero los jugadores malvados sabrán qué jugador es."
+},
+"Sweetheart": {
+  "name": "Encanto",
+  "description": "Si mueres, 1 jugador pasa a estar borracho."
+},
+"Tea Lady": {
+  "name": "Dama del Té",
+  "description": "Si tus dos vecinos son buenos, no pueden morir."
+},
+"Thief": {
+  "name": "Ladrón",
+  "description": "Cada noche, escoge a 1 jugador (no a ti mismo): mañana su voto contará negativamente."
+},
+"Tinker": {
+  "name": "Manitas",
+  "description": "Puedes morir en cualquier momento."
+},
+"Town Crier": {
+  "name": "Pregonero",
+  "description": "Cada noche* descubres si algún Esbirro nominó durante el día."
+},
+"Toymaker": {
+  "name": "Juguetero",
+  "description": "El Demonio puede elegir no atacar y debe no atacar al menos una vez por partida. Los jugadores malvados al inicio reciben la información habitual."
+},
+"Undertaker": {
+  "name": "Enterrador",
+  "description": "Cada noche* descubres qué personaje ha muerto por ejecución durante el día."
+},
+"Vigormortis": {
+  "name": "Vigormortis",
+  "description": "Cada noche* elige a 1 jugador: muere. Los Esbirros que mates conservan su habilidad y envenenan a 1 Aldeano vecino. [−1 Forastero]"
+},
+"Virgin": {
+  "name": "Virgen",
+  "description": "La primera vez que te nominen, si el que te nomina es un Aldeano, es ejecutado de inmediato."
+},
+"Vizier": {
+  "name": "Visir",
+  "description": "Todos los jugadores saben quién eres. No puedes morir durante el día. Si algún jugador bueno vota, puedes ejecutar al nominado inmediatamente."
+},
+"Vortox": {
+  "name": "Vortox",
+  "description": "Cada noche* elige a 1 jugador: muere. Las habilidades de los Aldeanos dan información falsa. Si algún día no hay ejecución, los malvados ganan."
+},
+"Voudon": {
+  "name": "Vudú",
+  "description": "Sólo los muertos y tú podéis votar. No usan el voto fantasma. No se requiere un 50% para la ejecución."
+},
+"Washerwoman": {
+  "name": "Lavandera",
+  "description": "Empiezas descubriendo que 1 de 2 jugadores es un Aldeano en concreto."
+},
+"Widow": {
+  "name": "Viuda",
+  "description": "Tu primera noche, mira el Grimorio y escoge a 1 jugador: será envenenado. 1 jugador bueno descubre que la Viuda está en juego."
+},
+"Witch": {
+  "name": "Bruja",
+  "description": "Cada noche elige a 1 jugador: muere si mañana nomina a alguien. Pierdes tu habilidad si solo quedan 3 jugadores vivos."
+},
+"Zombuul": {
+  "name": "Zombuul",
+  "description": "Cada noche*, si hoy no ha muerto nadie, elige a 1 jugador: muere. La 1ª vez que mueras resucitas, pero te perciben como muerto."
+}
+
+
+
+
+
+
+
   }
+  
