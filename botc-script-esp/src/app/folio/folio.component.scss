@@ -92,7 +92,8 @@
   .character-name {
     flex: 0.8; /* Ocupa el espacio restante */
     padding-right: 0px;
-    font-style: oblique;
+    //font-style: oblique;
+    font-weight: bold;
   }
   
   .character-description {
@@ -103,7 +104,7 @@
 
 
   .section {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
 
 
