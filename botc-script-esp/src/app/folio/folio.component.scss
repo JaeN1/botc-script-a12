@@ -46,7 +46,7 @@
     height: 297mm; // La altura se ajusta automáticamente
     //aspect-ratio: 210 / 297; // Mantiene la proporción A4
     background-color: #ffffff; // Fondo blanco para el "folio"
-    box-shadow: 0 2mm 4mm rgba(0, 0, 0, 0.2); // Sombra para dar la impresión de estar "elevado"
+    //box-shadow: 0 2mm 4mm rgba(0, 0, 0, 0.2); // Sombra para dar la impresión de estar "elevado"
     display: flex;
     flex-direction: column;
     padding: 1%; // Un padding proporcional
@@ -97,4 +97,11 @@
   
   .character-description {
     flex: 4; /* Ajusta esto según el espacio que quieras dar a la descripción */
+  }
+
+
+
+
+  .section {
+    margin-bottom: 20px;
   }

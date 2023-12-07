@@ -13,6 +13,13 @@ export class FolioComponent implements OnInit {
   selectedCharacter: any;
   selectedCharacters: any[] = []; // Inicializa como un arreglo vacío
   hasTownsfolk: boolean = false;
+  showTownsfolkHeader: boolean = false;
+
+
+  townsfolk: any[] = [];
+  outsiders: any[] = [];
+  minions: any[] = [];
+  demons: any[] = [];
 
 
   constructor(private personajesService: PersonajesService,
@@ -27,6 +34,18 @@ export class FolioComponent implements OnInit {
       this.characterService.selectedCharacters$.subscribe(characters => {
         this.selectedCharacters = characters;
       });
+
+      this.characterService.hasTownsfolkBeenSelected$.subscribe(hasBeenSelected => {
+        this.showTownsfolkHeader = hasBeenSelected;
+      });
+
+      this.characterService.getTownsfolkCharacters().subscribe(characters => {
+        console.log('Townsfolk Characters:', characters);
+        this.townsfolk = characters;
+      });
+    this.characterService.getOutsiderCharacters().subscribe(characters => this.outsiders = characters);
+    this.characterService.getMinionCharacters().subscribe(characters => this.minions = characters);
+    this.characterService.getDemonCharacters().subscribe(characters => this.demons = characters);
   }
   
   manejarAccion(event: any) {

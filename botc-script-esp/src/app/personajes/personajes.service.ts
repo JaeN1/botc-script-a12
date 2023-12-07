@@ -9,8 +9,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PersonajesService {
-  private apiUrl = '../assets/roles.json'
-  private apiTranslateUrl = '../assets/translation-es.json'
+  private apiUrl = 'assets/roles.json'
+  private apiTranslateUrl = 'assets/translation-es.json'
   private translations: any = {};
 
   constructor(private http: HttpClient) { }

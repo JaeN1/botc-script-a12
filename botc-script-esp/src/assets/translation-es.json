@@ -34,5 +34,9 @@
     "Grandmother": {
       "name": "Abuela",
       "description": "El Abuela ayuda a guiar al pueblo con..."
+    },
+    "Drunk": {
+      "name": "Borracho",
+      "description": "El Borracho ayuda a guiar al pueblo con ALCOHOL..."
     }
   }

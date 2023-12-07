@@ -6,12 +6,30 @@
       <input type="text" placeholder="SCRIPT NAME" class="script-name-input" />
       <input type="text" placeholder="Author" class="author-input" />
     </div>
-    <div>
-      ________________________
-    </div>
+
+
+    <!-- <div *ngIf="showTownsfolkHeader" class="townsfolk-header">
+      <h1>Townsfolk Selected</h1>
+    </div> -->
     <!-- class="folio-container" -->
-    <div>
+    <!-- <div>
       <div *ngFor="let character of selectedCharacters" class="character-row">
+        <div class="character-icon">
+          <img [src]="getIconPath(character.name)" alt="{{ character.nombre }}" class="character-icon">
+        </div>
+        <div class="character-name">
+          {{ character.nombre }}
+        </div>
+        <div class="character-description">
+          {{ character.description }}
+        </div>
+      </div>
+    </div> -->
+
+
+    <div class="section outsiders">
+      <h2>Townsfolk</h2>
+      <div *ngFor="let character of townsfolk" class="character-row">
         <div class="character-icon">
           <img [src]="getIconPath(character.name)" alt="{{ character.nombre }}" class="character-icon">
         </div>
@@ -24,9 +42,52 @@
       </div>
     </div>
 
-  
-  
+    <div class="section outsiders">
+      <h2>Outsiders</h2>
+      <div *ngFor="let character of outsiders" class="character-row">
+        <div class="character-icon">
+          <img [src]="getIconPath(character.name)" alt="{{ character.nombre }}" class="character-icon">
+        </div>
+        <div class="character-name">
+          {{ character.nombre }}
+        </div>
+        <div class="character-description">
+          {{ character.description }}
+        </div>
+      </div>
+    </div>
 
+    <div class="section minions">
+      <h2>Minions</h2>
+      <div *ngFor="let character of minions" class="character-row">
+        <div class="character-icon">
+          <img [src]="getIconPath(character.name)" alt="{{ character.nombre }}" class="character-icon">
+        </div>
+        <div class="character-name">
+          {{ character.nombre }}
+        </div>
+        <div class="character-description">
+          {{ character.description }}
+        </div>
+      </div>
+    </div>
+
+    <div class="section demons">
+      <h2>Demons</h2>
+      <div *ngFor="let character of demons" class="character-row">
+        <div class="character-icon">
+          <img [src]="getIconPath(character.name)" alt="{{ character.nombre }}" class="character-icon">
+        </div>
+        <div class="character-name">
+          {{ character.nombre }}
+        </div>
+        <div class="character-description">
+          {{ character.description }}
+        </div>
+      </div>
+    </div>
+
+    
 <!-- 
 <div class="folio-container">
   
