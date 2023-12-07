@@ -105,3 +105,59 @@
   .section {
     margin-bottom: 20px;
   }
+
+
+
+
+
+  //ESTILO SEPARADORES
+  /* Estilo base para la línea */
+.line-container {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+  
+  /* Línea antes del texto */
+  .line-before {
+    flex-grow: 0;
+    height: 2px; /* Ajusta el grosor de la línea aquí */
+    background: #d3d3d3; /* Color de la línea */
+    margin-right: 10px; /* Espacio entre la línea y el texto */
+  }
+  
+  /* Estilo del texto */
+  .text-label {
+    padding: 0 8px; /* Ajusta el padding horizontal */
+    background: white;
+    font-weight: bold; /* Texto en negrita */
+    z-index: 1; /* Asegura que el texto se superponga a las líneas */
+    position: relative;
+  }
+  
+  /* Línea después del texto */
+  .line-after {
+    flex-grow: 1;
+    height: 2px; /* Ajusta el grosor de la línea aquí */
+    background: #d3d3d3; /* Color de la línea */
+    margin-left: 10px; /* Espacio entre el texto y la línea */
+  }
+  
+  /* Estilo del botón o etiqueta */
+  .label-tag {
+    border: 2px solid #d3d3d3; /* Ajusta el borde del botón */
+    padding: 2px 8px; /* Ajusta el padding del botón */
+    border-radius: 20px; /* Ajusta para redondear las esquinas */
+    font-size: 0.75rem; /* Ajusta el tamaño de la fuente */
+    margin-left: 10px; /* Espacio entre la línea y el botón */
+    white-space: nowrap;
+  }
+  
+
+
+
+
+
+
+
+
