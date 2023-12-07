@@ -1,0 +1,56 @@
+{
+  "teensy": [
+    {
+      "id": "fang_gu",
+      "msg": "The Fang Gu is not recommended for 5 or 6 player games."
+    },
+    {
+      "id": "shabaloth",
+      "msg": "The Shabaloth is not recommended for 5 player games."
+    },
+    {
+      "id": "assassin",
+      "msg": "The Assassin is not recommended for 5 player games."
+    },
+    {
+      "id": "goon",
+      "msg": "The Goon is not recommended for 5 or 6 player games."
+    },
+    {
+      "id": "courtier",
+      "msg": "The Courtier is not recommended for 5 or 6 player games."
+    },
+    {
+      "id": "politician",
+      "msg": "The Politician is not recommended for 5 or 6 player games."
+    },
+    {
+      "id": "bounty_hunter",
+      "msg": "The Bounty Hunter is not recommended for 5 or 6 player games."
+    },
+    {
+      "id": "witch",
+      "msg": "The Witch is not recommended for 5 player games."
+    },
+	{
+      "id": "mephit",
+      "msg": "The Mephit is not recommended for 5 or 6 player games."
+    },
+	{
+      "id": "mezepheles",
+      "msg": "The Mezepheles is not recommended for 5 or 6 player games."
+    },
+	{
+      "id": "poppy_grower",
+      "msg": "For 5 or 6 player games, adding a Toymaker is recommended."
+    },
+    {
+      "id": "king",
+      "msg": "The King is not recommended for 5 or 6 player games."
+    },
+    {
+      "id": "choirboy",
+      "msg": "The Choirboy is not recommended for 5 or 6 player games."
+    }	
+  ]
+}

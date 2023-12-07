@@ -1,0 +1,20 @@
+[
+	{
+		"id": "choirboy",
+		"tether": [
+			{
+				"id": "king",
+				"reason": "The King is required."
+			}
+		]
+	},
+	{
+		"id": "huntsman",
+		"tether": [
+			{
+				"id": "damsel",
+				"reason": "The Damsel is required."
+			}
+		]
+	}	
+]
