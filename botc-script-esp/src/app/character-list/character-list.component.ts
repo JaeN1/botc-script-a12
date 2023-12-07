@@ -47,8 +47,9 @@ export class CharacterListComponent implements OnInit {
 
   filterCharacters(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value.toLowerCase();
-    this.filteredCharacters = this.characters.filter(character =>
-      character.name.toLowerCase().includes(filterValue)
+    this.filteredCharacters = this.characters?.filter(character =>
+      character.name.toLowerCase().includes(filterValue) ||
+      character.nombre?.toLowerCase().includes(filterValue)
     );
   }
 
