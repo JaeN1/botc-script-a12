@@ -69,4 +69,19 @@
       cursor: pointer;
     }
   }
+
+
+  .tooltip {
+    position: absolute;
+    border: 1px solid #ccc;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    //display: none; /* Inicialmente oculto */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+  }
+
+  
+
   

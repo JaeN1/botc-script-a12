@@ -7,36 +7,15 @@
 </div>
 
 <div class="character-list-container">
-
-  
-    <!-- <h3>TOUNSFOLK</h3>
-    <div class="characters">
-      <div *ngFor="let character of filteredCharacters" class="character-item" (click)="seleccionarPersonaje(character)">
-        <img [src]="getIconPath(character.name)" alt="{{ character.nombre }}" class="character-icon">
-        <span class="character-name">{{ character.nombre }}</span>
-      </div>
-    </div>
-  </div> -->
-
-  <!-- <div class="characters">
-    <div *ngFor="let character of filteredCharacters" 
-         class="character-item" 
-         [ngClass]="{'character-selected': isSelected(character)}"
-         (click)="seleccionarPersonaje(character)">
-      <img [src]="getIconPath(character.name)" 
-           alt="{{ character.nombre }}" 
-           class="character-icon">
-      <span class="character-name">{{ character.nombre }}</span>
-    </div>
-  </div> -->
-  
   <div *ngFor="let roleType of objectKeys(personajesAgrupados)" class="role-group">
     <h3>{{ roleTypeTranslations[roleType] || roleType }}</h3>
     <div class="characters">
       <div *ngFor="let character of personajesAgrupados[roleType]" 
            class="character-item" 
            [ngClass]="{'character-selected': isSelected(character)}"
-           (click)="seleccionarPersonaje(character)">
+           (click)="seleccionarPersonaje(character)"
+           (mouseenter)="showTooltip(character, $event)"
+            (mouseleave)="hideTooltip()">
         <img [src]="getIconPath(character.name)" 
              alt="{{ character.nombre }}" 
              class="character-icon">
@@ -54,3 +33,8 @@
   <div>
     
   </div>
+
+  <!-- Tooltip Container -->
+<div class="tooltip" *ngIf="tooltipVisible" [style.top]="tooltipPosition.y" [style.left]="tooltipPosition.x">
+  {{ tooltipContent }}
+</div>

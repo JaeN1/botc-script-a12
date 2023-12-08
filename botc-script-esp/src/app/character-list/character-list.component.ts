@@ -25,6 +25,11 @@ export class CharacterListComponent implements OnInit {
     'fabled': 'Fábulas'
   };
 
+  //tooltip
+  tooltipVisible = false;
+  tooltipContent = '';
+  tooltipPosition = { x: '0px', y: '0px' };
+
   constructor(
     private personajesService: PersonajesService,
     private characterService: CharacterService 
@@ -36,7 +41,7 @@ export class CharacterListComponent implements OnInit {
 
   ngOnInit(): void {
     this.agruparPersonajesPorRoleType(this.characters);
-    
+
     this.filteredCharacters = this.characters; // Inicialmente, todos los personajes están filtrados
 
     this.personajesService.getPersonajesConTraducciones().subscribe(
@@ -142,6 +147,19 @@ export class CharacterListComponent implements OnInit {
 
   objectKeys = Object.keys;
 
+  showTooltip(character: any, event: MouseEvent): void {
+    this.tooltipContent = character.name; // o cualquier propiedad que contenga el texto para mostrar
+    this.tooltipPosition = {
+      x: event.clientX + 'px',
+      y: event.clientY + 'px'
+    };
+    this.tooltipVisible = true;
+  }
+  
+
+  hideTooltip(): void {
+    this.tooltipVisible = false;
+  }
 
 
 }
