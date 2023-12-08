@@ -12,7 +12,7 @@
     </div>
   </div> -->
 
-  <div class="characters">
+  <!-- <div class="characters">
     <div *ngFor="let character of filteredCharacters" 
          class="character-item" 
          [ngClass]="{'character-selected': isSelected(character)}"
@@ -22,10 +22,23 @@
            class="character-icon">
       <span class="character-name">{{ character.nombre }}</span>
     </div>
+  </div> -->
+  
+  <div *ngFor="let roleType of objectKeys(personajesAgrupados)" class="role-group">
+    <h3>{{ roleType }}</h3>
+    <div class="characters">
+      <div *ngFor="let character of personajesAgrupados[roleType]" 
+           class="character-item" 
+           [ngClass]="{'character-selected': isSelected(character)}"
+           (click)="seleccionarPersonaje(character)">
+        <img [src]="getIconPath(character.name)" 
+             alt="{{ character.nombre }}" 
+             class="character-icon">
+        <span class="character-name">{{ character.nombre }}</span>
+      </div>
+    </div>
   </div>
-  
-
-  
+</div>
 
   <div class="actions">
     <button (click)="clearSelection()">CLEAR</button>

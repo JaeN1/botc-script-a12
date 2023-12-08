@@ -33,15 +33,16 @@ export class CharacterListComponent implements OnInit {
       (data: any[]) => {
         this.characters = data; // Asigna los datos de personajes a la propiedad
         this.filteredCharacters = data; // Asegúrate de que esta línea esté presente
+        this.agruparPersonajesPorRoleType(data); // Asegúrate de llamar a esta función aquí
       },
       (error) => {
         console.error('Error fetching characters', error);
       }
     );
 
-    this.personajesService.getPersonajes().subscribe(personajes => {
-      this.agruparPersonajesPorRoleType(personajes);
-    });
+    // this.personajesService.getPersonajes().subscribe(personajes => {
+    //   this.agruparPersonajesPorRoleType(personajes);
+    // });
 
   }
 
@@ -81,6 +82,7 @@ export class CharacterListComponent implements OnInit {
     }
 
   agruparPersonajesPorRoleType(personajes: any[]) {
+    this.personajesAgrupados = {};
     personajes.forEach(personaje => {
       if (!this.personajesAgrupados[personaje.roleType]) {
         this.personajesAgrupados[personaje.roleType] = [];
