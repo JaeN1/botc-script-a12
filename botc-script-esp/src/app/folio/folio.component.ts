@@ -61,4 +61,26 @@ export class FolioComponent implements OnInit {
     updateContent(newContent: string) {
       this.folioContentService.updateContent(newContent);
     }
+
+
+
+    onGenerateJson(selectedCharacters: any[]): void {
+      const jsonToDownload = [
+        { "id": "_meta", "author": "", "name": "" },
+        ...selectedCharacters.map(character => character.id)
+      ];
+      this.downloadJson(jsonToDownload, 'selected-characters.json');
+    }
+
+    private downloadJson(jsonObject: any, fileName: string): void {
+      const jsonStr = JSON.stringify(jsonObject);
+      const blob = new Blob([jsonStr], { type: 'application/json' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileName;
+      a.click();
+      window.URL.revokeObjectURL(url);
+    }
+
 }

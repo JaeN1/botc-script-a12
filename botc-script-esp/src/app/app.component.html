@@ -3,7 +3,9 @@
   <!-- Sidebar Izquierda: Filtros y Lista de Personajes -->
   <aside class="sidebar-left">
     <app-filters></app-filters> <!-- Componente de filtros -->
-    <app-character-list></app-character-list> <!-- Componente de lista de personajes -->
+    <!-- <app-character-list></app-character-list> Componente de lista de personajes -->
+    <app-character-list (personajeSeleccionado)="handlePersonajeSeleccionado($event)"></app-character-list>
+
   </aside>
 
   <!-- Área Central: Folio -->
@@ -13,7 +15,10 @@
 
   <!-- Sidebar Derecha: Botones -->
   <aside class="sidebar-right">
-    <app-side-buttons></app-side-buttons> <!-- Componente para botones laterales -->
+    <!-- <app-side-buttons></app-side-buttons> Componente para botones laterales -->
+
+    <app-side-buttons (generateJson)="onGenerateJson()"></app-side-buttons>
+
   </aside>
 </div>
 

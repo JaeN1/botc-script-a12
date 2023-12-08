@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { jsPDF } from 'jspdf';
 import { FolioContentService} from '../folio/folio.service'
 import html2canvas from 'html2canvas';
@@ -10,6 +10,8 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./side-buttons.component.scss']
 })
 export class SideButtonsComponent implements OnInit {
+  @Output() generateJson = new EventEmitter<void>(); // Emite un evento sin valor
+
 
   constructor(private folioContentService: FolioContentService) { }
 
@@ -55,5 +57,10 @@ export class SideButtonsComponent implements OnInit {
     // Esto es solo un placeholder y necesita ser implementado de acuerdo a tu aplicación.
     return this.folioContentService.getContent();
   }
+
+  onGenerateJsonClick(): void {
+    this.generateJson.emit(); // Emitir el evento cuando se hace clic en el botón
+  }
+
 
 }

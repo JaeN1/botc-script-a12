@@ -78,7 +78,7 @@ export class CharacterListComponent implements OnInit {
   seleccionarPersonaje(personaje: any) {
     // Solo emite el evento si el personaje no estaba seleccionado antes
     if (this.personajeSeleccionado !== personaje) {
-       //this.personajeSeleccionado.emit(personaje);
+       this.personajeSeleccionado.emit(personaje);
        //this.characterService.selectCharacter(personaje);
 
         this.characterService.toggleCharacterSelection(personaje);

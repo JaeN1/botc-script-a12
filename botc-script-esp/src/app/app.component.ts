@@ -16,6 +16,8 @@ export class AppComponent {
   scriptName = 'Nombre del Guión';
   author = 'Autor';
   alturaCabecera = 50; // Altura hasta donde llega la cabecera incluyendo la línea de separación
+  selectedCharacters: any[] = []; // Asegúrate de que esta propiedad esté actualizada con los personajes seleccionados
+
 
   @ViewChild('folioCanvas') folioCanvas!: ElementRef<HTMLCanvasElement>;
   personajes: any[] | undefined;
@@ -131,11 +133,19 @@ export class AppComponent {
     } else {
       console.error('La lista de personajes no está definida');
     }
+
+    // Asegúrate de que estás agregando el personaje a la lista correcta
+    this.personajesSeleccionados.push(personajeSeleccionado);
+
+    console.log("AAAAAAAAAAAAAAAAA")
+    console.log(this.personajesSeleccionados)
   }
   
-  
-  
-  
+  handlePersonajeSeleccionado(personaje: any) {
+    // Asegúrate de que estás agregando el personaje a la lista correcta
+    this.personajesSeleccionados.push(personaje);
+  }
+    
   agregarPersonajeAlCanvas(personaje: any) {
     const canvas = document.getElementById('folioCanvas') as HTMLCanvasElement;
   
@@ -210,7 +220,7 @@ export class AppComponent {
   }
   
   descargarPDF() {
-    console.log('descargarPDF llamado');
+    //console.log('descargarPDF llamado');
     if (!this.folioCanvas) {
       console.error('this.folioCanvas es nulo');
       return;
@@ -221,22 +231,43 @@ export class AppComponent {
 
     // Capturar el contenido del canvas como imagen
     html2canvas(canvas).then((canvasImg) => {
-      console.log('html2canvas ejecutado');
+      //console.log('html2canvas ejecutado');
       // Crear un nuevo documento PDF
       const pdf = new jsPDF('p', 'mm', 'a4');
-      console.log('jsPDF creado');
+      //console.log('jsPDF creado');
       const imgData = canvasImg.toDataURL('image/png');
 
       // Agregar la imagen al PDF
       pdf.addImage(imgData, 'PNG', 0, 0, pdf.internal.pageSize.getWidth(), pdf.internal.pageSize.getHeight());
 
       // Descargar el PDF
-      console.log('Ancho del canvas:', canvas.width);
-      console.log('Alto del canvas:', canvas.height);
+      //console.log('Ancho del canvas:', canvas.width);
+      //console.log('Alto del canvas:', canvas.height);
       pdf.save('canvas.pdf');
     });
+    }
   }
 
-  }
 
+  onGenerateJson(): void {
+    const jsonToDownload = [
+      { "id": "_meta", "author": this.author, "name": this.scriptName },
+      ...this.personajesSeleccionados.map(character => character.id) // Usar personajesSeleccionados en lugar de selectedCharacters
+    ];
+    this.downloadJson(jsonToDownload);
+  }
+  
+
+  private downloadJson(jsonObject: any): void {
+    const jsonStr = JSON.stringify(jsonObject);
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'selected-characters.json';
+    document.body.appendChild(a); // necesario para que funcione en Firefox
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a); // limpiar el DOM
+  }
 }
