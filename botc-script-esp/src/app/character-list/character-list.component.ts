@@ -148,7 +148,7 @@ export class CharacterListComponent implements OnInit {
   objectKeys = Object.keys;
 
   showTooltip(character: any, event: MouseEvent): void {
-    this.tooltipContent = character.name; // o cualquier propiedad que contenga el texto para mostrar
+    this.tooltipContent =  character.nombre + " - " + character.description; // o cualquier propiedad que contenga el texto para mostrar
     this.tooltipPosition = {
       x: event.clientX + 'px',
       y: event.clientY + 'px'
