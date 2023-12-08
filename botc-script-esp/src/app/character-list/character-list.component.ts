@@ -15,7 +15,15 @@ export class CharacterListComponent implements OnInit {
   personajesAgrupados: any = {}; // Un objeto para almacenar los personajes agrupados
   groupedCharacters: { [key: string]: any[] } = {}; // Objeto para almacenar los personajes agrupados
   selectedCharacters: any[] = [];
-
+  
+  roleTypeTranslations: { [key: string]: string } = {
+    'townsfolk': 'Aldeano',
+    'outsider': 'Forastero',
+    'minion': 'Esbirro',
+    'demon': 'Demonio',
+    'travellers': 'Viajeros',
+    'fabled': 'Fábulas'
+  };
 
   constructor(
     private personajesService: PersonajesService,

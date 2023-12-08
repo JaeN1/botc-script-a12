@@ -25,7 +25,7 @@
   </div> -->
   
   <div *ngFor="let roleType of objectKeys(personajesAgrupados)" class="role-group">
-    <h3>{{ roleType }}</h3>
+    <h3>{{ roleTypeTranslations[roleType] || roleType }}</h3>
     <div class="characters">
       <div *ngFor="let character of personajesAgrupados[roleType]" 
            class="character-item" 
