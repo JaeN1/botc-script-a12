@@ -83,4 +83,19 @@ export class FolioComponent implements OnInit {
       window.URL.revokeObjectURL(url);
     }
 
+
+    removeCharacter(character: any): void {
+      // Llamar a la función para eliminar el personaje de la lista de seleccionados
+      this.characterService.toggleCharacterSelection(character);
+      // Eliminar el personaje de la lista local en el folio
+      this.removeFromLocalList(character);
+    }
+
+    removeFromLocalList(character: any): void {
+      // Implemente la lógica para eliminar el personaje de las listas locales, por ejemplo:
+      this.townsfolk = this.townsfolk.filter(c => c.id !== character.id);
+      // Repita para outsiders, minions y demons si es necesario
+      this.outsiders = this.outsiders.filter(c => c.id !== character.id);
+      // ... y así sucesivamente para cada grupo
+    }
 }

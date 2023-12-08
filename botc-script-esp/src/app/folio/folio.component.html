@@ -1,5 +1,3 @@
-
-
   <div id="folio" class="folio-container">
     <!-- ... otras partes del folio ... -->
     <div class="script-header">
@@ -7,34 +5,14 @@
       <input type="text" placeholder="Autor" class="author-input" />
     </div>
 
-
-
-    <!-- <div *ngIf="showTownsfolkHeader" class="townsfolk-header">
-      <h1>Townsfolk Selected</h1>
-    </div> -->
-    <!-- class="folio-container" -->
-    <!-- <div>
-      <div *ngFor="let character of selectedCharacters" class="character-row">
-        <div class="character-icon">
-          <img [src]="getIconPath(character.name)" alt="{{ character.nombre }}" class="character-icon">
-        </div>
-        <div class="character-name">
-          {{ character.nombre }}
-        </div>
-        <div class="character-description">
-          {{ character.description }}
-        </div>
-      </div>
-    </div> -->
-
-
     <div class="section outsiders">
       <div class="line-container">
         <div class="line-before"></div>
         <div class="line-after"></div>
         <div class="label-tag">ALDEANOS</div>
       </div>
-      <div *ngFor="let character of townsfolk" class="character-row">
+      
+      <div *ngFor="let character of townsfolk" class="character-row" (click)="removeCharacter(character)">
         <div class="character-icon">
           <img [src]="getIconPath(character.name)" alt="{{ character.nombre }}" class="character-icon">
         </div>
@@ -53,7 +31,7 @@
         <div class="line-after"></div>
         <div class="label-tag">FORASTEROS</div>
       </div>
-      <div *ngFor="let character of outsiders" class="character-row">
+      <div *ngFor="let character of outsiders" class="character-row" (click)="removeCharacter(character)">
         <div class="character-icon">
           <img [src]="getIconPath(character.name)" alt="{{ character.nombre }}" class="character-icon">
         </div>
@@ -72,7 +50,7 @@
         <div class="line-after"></div>
         <div class="label-tag">ESBIRROS</div>
       </div>
-      <div *ngFor="let character of minions" class="character-row">
+      <div *ngFor="let character of minions" class="character-row" (click)="removeCharacter(character)">
         <div class="character-icon">
           <img [src]="getIconPath(character.name)" alt="{{ character.nombre }}" class="character-icon">
         </div>
@@ -91,7 +69,7 @@
         <div class="line-after"></div>
         <div class="label-tag">DEMONIOS</div>
       </div>
-      <div *ngFor="let character of demons" class="character-row">
+      <div *ngFor="let character of demons" class="character-row" (click)="removeCharacter(character)">
         <div class="character-icon">
           <img [src]="getIconPath(character.name)" alt="{{ character.nombre }}" class="character-icon">
         </div>
@@ -103,13 +81,3 @@
         </div>
       </div>
     </div>
-
-    
-<!-- 
-<div class="folio-container">
-  
-
-  <div class="character-area">
-    <p>No characters yet...</p>
-  </div>
-</div> -->

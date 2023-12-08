@@ -49,6 +49,9 @@ export class CharacterService {
     // Obtén los índices del personaje en ambas listas
     const indexInIds = this.selectedCharacterIds.value.indexOf(character.id);
     const indexInCharacters = this.selectedCharacters.value.findIndex(c => c.id === character.id);
+
+    const currentSelected = this.selectedCharacters.value;
+    const index = currentSelected.findIndex(c => c.id === character.id);
   
     if (character.roleType === 'townsfolk' && !this.hasTownsfolkBeenSelected.getValue()) {
       this.hasTownsfolkBeenSelected.next(true);
