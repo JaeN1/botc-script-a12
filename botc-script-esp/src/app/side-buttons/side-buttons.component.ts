@@ -31,7 +31,7 @@ export class SideButtonsComponent implements OnInit {
 
     if (element)
     html2canvas(element, {     
-       scale: 1,
+       scale: 1.5,
       useCORS: true}
       ).then((canvas) => {
 
