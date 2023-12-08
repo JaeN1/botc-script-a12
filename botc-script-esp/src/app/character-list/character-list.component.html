@@ -1,3 +1,14 @@
+<!-- Filtros de RoleType -->
+<div class="role-type-filters">
+  <label>
+    <input type="radio" name="roleTypeFilter" (change)="filterByRoleType('all')" checked>
+    Todos
+  </label>
+  <label *ngFor="let roleType of objectKeys(roleTypeTranslations)">
+    <input type="radio" name="roleTypeFilter" (change)="filterByRoleType(roleType)">
+    {{ roleTypeTranslations[roleType] }}
+  </label>
+</div>
 
 <div class="character-list-container">
 

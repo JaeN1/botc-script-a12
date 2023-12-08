@@ -11,11 +11,12 @@ export class CharacterListComponent implements OnInit {
   @Output() personajeSeleccionado = new EventEmitter<any>();
 
   characters: any[] = []; // Debería ser llenado con los personajes
-  filteredCharacters: any[] = [];
   personajesAgrupados: any = {}; // Un objeto para almacenar los personajes agrupados
   groupedCharacters: { [key: string]: any[] } = {}; // Objeto para almacenar los personajes agrupados
   selectedCharacters: any[] = [];
-  
+  allCharacters: any[] = []; // Array para almacenar todos los personajes
+  filteredCharacters: any[] = []; // Array para personajes filtrados
+
   roleTypeTranslations: { [key: string]: string } = {
     'townsfolk': 'Aldeano',
     'outsider': 'Forastero',
@@ -55,10 +56,11 @@ export class CharacterListComponent implements OnInit {
       }
     );
 
-    // this.personajesService.getPersonajes().subscribe(personajes => {
-    //   this.agruparPersonajesPorRoleType(personajes);
-    // });
-
+    this.personajesService.getPersonajesConTraducciones().subscribe(data => {
+      this.allCharacters = data;
+      this.filteredCharacters = data; // Inicialmente todos los personajes son visibles
+      this.agruparPersonajesPorRoleType(data);
+    });
   }
 
   filterCharacters(event: Event): void {
@@ -161,5 +163,13 @@ export class CharacterListComponent implements OnInit {
     this.tooltipVisible = false;
   }
 
-
+  //FILTROS
+  filterByRoleType(roleType: string): void {
+    if (roleType === 'all') {
+      this.filteredCharacters = this.allCharacters;
+    } else {
+      this.filteredCharacters = this.allCharacters.filter(character => character.roleType === roleType);
+    }
+    this.agruparPersonajesPorRoleType(this.filteredCharacters);
+  }
 }
