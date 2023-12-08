@@ -35,6 +35,8 @@ export class CharacterListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.agruparPersonajesPorRoleType(this.characters);
+    
     this.filteredCharacters = this.characters; // Inicialmente, todos los personajes están filtrados
 
     this.personajesService.getPersonajesConTraducciones().subscribe(
@@ -56,11 +58,50 @@ export class CharacterListComponent implements OnInit {
 
   filterCharacters(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value.toLowerCase();
+    const filtered = this.characters?.filter(character =>
+      character.name.toLowerCase().includes(filterValue) ||
+      character.nombre?.toLowerCase().includes(filterValue)
+    );
+  
+    this.agruparPersonajesPorRoleType(filtered);
+  }
+  
+
+  filterCharacters2(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value.toLowerCase();
     this.filteredCharacters = this.characters?.filter(character =>
       character.name.toLowerCase().includes(filterValue) ||
       character.nombre?.toLowerCase().includes(filterValue)
     );
   }
+
+  filterCharacters3(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value.toLowerCase();
+    this.filteredCharacters = this.characters?.filter(character => {
+      const nameInEnglish = character.name?.toLowerCase().includes(filterValue);
+      const nameInSpanish = character.nombre?.toLowerCase().includes(filterValue);
+      return nameInEnglish || nameInSpanish;
+    });
+  }
+  filterCharacters4(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value.toLowerCase();
+    console.log('Filtrando personajes con: ', filterValue);
+  
+    // Asegúrate de que los personajes están cargados
+    if (!this.characters) {
+      console.error('No hay personajes cargados para filtrar');
+      return;
+    }
+  
+    this.filteredCharacters = this.characters.filter(character => {
+      const nameMatch = character.name?.toLowerCase().includes(filterValue);
+      const spanishNameMatch = character.nombre?.toLowerCase().includes(filterValue);
+      return nameMatch || spanishNameMatch;
+    });
+  
+    console.log('Personajes filtrados: ', this.filteredCharacters);
+  }
+  
 
   clearSelection(): void {
     // Lógica para limpiar la selección
