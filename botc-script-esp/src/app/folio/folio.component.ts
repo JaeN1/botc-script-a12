@@ -9,6 +9,10 @@ import { FolioContentService } from './folio.service';
   styleUrls: ['./folio.component.scss']
 })
 export class FolioComponent implements OnInit {
+  //LUPA
+  zoomedIn = false;
+  
+  
   personajesSeleccionados: any[] = [];
   selectedCharacter: any;
   selectedCharacters: any[] = []; // Inicializa como un arreglo vacío
@@ -48,6 +52,16 @@ export class FolioComponent implements OnInit {
     this.characterService.getDemonCharacters().subscribe(characters => this.demons = characters);
   }
   
+  //LUPA
+  toggleZoom() {
+    this.zoomedIn = !this.zoomedIn;
+    const folio = document.getElementById('folio');
+    if (folio) {
+        folio.style.transform = this.zoomedIn ? 'scale(1)' : 'scale(0.8)';
+    }
+}
+
+
   manejarAccion(event: any) {
     // Lógica para manejar acciones realizadas en los personajes
   }

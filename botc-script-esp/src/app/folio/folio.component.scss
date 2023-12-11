@@ -55,7 +55,16 @@
     // transform: translateY(-50%);
     // top: 47%;
     //position: relative;
+    //LUPA
+    // transform: scale(0.8);
+    // transform-origin: top left;
+    // transition: transform 0.3s ease;
   }
+  //LUPA
+  .zoom-icon {
+    cursor: pointer;
+    /* otros estilos para posicionar el icono adecuadamente */
+}
   
 .character-entry {
     display: block; /* Asegura que cada entrada sea un bloque */
